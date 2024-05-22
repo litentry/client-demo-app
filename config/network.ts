@@ -54,7 +54,7 @@ export type Network = keyof typeof SUPPORTED_NETWORKS;
 /** @todo https://github.com/litentry/identity-hub/issues/426 */
 function validateNetwork(network: string | undefined): Network {
     if (!network) {
-        return 'litentry-staging';
+        return 'litentry-dev';
     }
 
     if (
@@ -65,6 +65,7 @@ function validateNetwork(network: string | undefined): Network {
         network !== 'litentry-rococo' &&
         network !== 'litentry' &&
         network !== 'litentry-local'
+
     ) {
         throw new Error(
             `Invalid network value in "NX_PARACHAIN_NETWORK": ${network}. Valid values are ${Object.keys(
