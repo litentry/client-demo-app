@@ -1,9 +1,9 @@
-import { hexToU8a, stringToU8a, u8aToHex, u8aToString } from '@polkadot/util';
-import { jsonDecrypt, jsonEncrypt } from '@polkadot/util-crypto';
-import type { EncryptedJson } from '@polkadot/util-crypto/types';
+import { hexToU8a, stringToU8a, u8aToHex, u8aToString } from "@polkadot/util";
+import { jsonDecrypt, jsonEncrypt } from "@polkadot/util-crypto";
+import type { EncryptedJson } from "@polkadot/util-crypto/types";
 
-import * as shieldingKeyDefaults from './defaults/shielding-key.defaults';
-import { ShieldingKey, ShieldingKeyData } from './shielding-key.utils.types';
+import * as shieldingKeyDefaults from "./defaults/shielding-key.defaults";
+import { ShieldingKey, ShieldingKeyData } from "./shielding-key.utils.types";
 
 /**
  * Generates a random shielding key.
@@ -12,14 +12,14 @@ export async function generate(): Promise<ShieldingKey> {
   const key = await global.crypto.subtle.generateKey(
     shieldingKeyDefaults.aesKeyGenParams,
     true,
-    shieldingKeyDefaults.aesKeyUsages
+    shieldingKeyDefaults.aesKeyUsages,
   );
   return { key };
 }
 
 export async function decrypt(
   args: { ciphertext: Uint8Array; nonce: Uint8Array },
-  shieldingKey: ShieldingKey
+  shieldingKey: ShieldingKey,
 ): Promise<{ cleartext: Uint8Array }> {
   try {
     // console.log('shix', shieldingKey);
@@ -29,7 +29,7 @@ export async function decrypt(
         iv: args.nonce,
       },
       shieldingKey.key,
-      args.ciphertext
+      args.ciphertext,
     );
 
     return { cleartext: new Uint8Array(decrypted) };
@@ -37,7 +37,7 @@ export async function decrypt(
     console.error(e);
     // It throws Throws OperationError if the ciphertext is invalid
     // We would like to return a more human error.
-    throw new Error('Failed to decrypt data');
+    throw new Error("Failed to decrypt data");
   }
 }
 
@@ -52,7 +52,7 @@ export function generateNonce12() {
 
 export async function encrypt(
   args: { cleartext: Uint8Array; nonce: Uint8Array },
-  shieldingKey: ShieldingKey
+  shieldingKey: ShieldingKey,
 ): Promise<{ ciphertext: Uint8Array }> {
   const encrypted = await global.crypto.subtle.encrypt(
     {
@@ -60,7 +60,7 @@ export async function encrypt(
       iv: args.nonce,
     },
     shieldingKey.key,
-    args.cleartext
+    args.cleartext,
   );
 
   return { ciphertext: new Uint8Array(encrypted) };
@@ -68,32 +68,32 @@ export async function encrypt(
 
 export async function encode(
   passphrase: string,
-  shieldingKey: ShieldingKey
+  shieldingKey: ShieldingKey,
 ): Promise<EncryptedJson> {
-  const raw = await global.crypto.subtle.exportKey('raw', shieldingKey.key);
+  const raw = await global.crypto.subtle.exportKey("raw", shieldingKey.key);
   const data: ShieldingKeyData = {
     key: u8aToHex(new Uint8Array(raw)),
     createdByTx: shieldingKey.createdByTx,
     createdAtHeight: shieldingKey.createdAtHeight,
   };
 
-  return jsonEncrypt(stringToU8a(JSON.stringify(data)), ['spki'], passphrase);
+  return jsonEncrypt(stringToU8a(JSON.stringify(data)), ["spki"], passphrase);
 }
 
 export async function decode(
   encryptedJson: EncryptedJson,
-  passphrase: string
+  passphrase: string,
 ): Promise<ShieldingKey> {
   const dataUi8 = jsonDecrypt(encryptedJson, passphrase);
   const data: ShieldingKeyData | undefined = JSON.parse(u8aToString(dataUi8));
   const keyUi8 = hexToU8a(data!.key);
 
   const key = await global.crypto.subtle.importKey(
-    'raw',
+    "raw",
     keyUi8,
     shieldingKeyDefaults.aesKeyGenParams,
     true,
-    shieldingKeyDefaults.aesKeyUsages
+    shieldingKeyDefaults.aesKeyUsages,
   );
 
   return {

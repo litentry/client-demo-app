@@ -1,6 +1,6 @@
 export const aesKeyGenParams: AesKeyGenParams = {
-  name: 'AES-GCM',
+  name: "AES-GCM",
   length: 256,
 };
 
-export const aesKeyUsages: KeyUsage[] = ['encrypt', 'decrypt'];
+export const aesKeyUsages: KeyUsage[] = ["encrypt", "decrypt"];

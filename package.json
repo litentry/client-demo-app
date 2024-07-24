@@ -47,5 +47,8 @@
       "@litentry/sidechain-api": "0.9.18-11",
       "@litentry/vc-sdk": "^3.0.0"
     }
+  },
+  "devDependencies": {
+    "prettier": "3.3.3"
   }
 }

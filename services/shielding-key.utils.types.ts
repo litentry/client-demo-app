@@ -6,9 +6,9 @@ export interface ShieldingKey {
 
 export type ShieldingKeyMeta = Pick<
   ShieldingKey,
-  'createdByTx' | 'createdAtHeight'
+  "createdByTx" | "createdAtHeight"
 >;
 
 export type ShieldingKeyData = {
   key: `0x${string}`;
-} & Pick<ShieldingKey, 'createdByTx' | 'createdAtHeight'>;
+} & Pick<ShieldingKey, "createdByTx" | "createdAtHeight">;
