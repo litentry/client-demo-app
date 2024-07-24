@@ -9,7 +9,7 @@ import {
   trusted_operations,
 } from "@litentry/parachain-api";
 
-import { State } from "./types";
+import { Status } from "./types";
 
 const litentryProductionSpec = getChain("litentry-prod");
 const litentryNetworkApiTypes = Object.assign(
@@ -24,11 +24,11 @@ const litentryNetworkApiTypes = Object.assign(
  * Connect to Litentry Parachain API
  */
 export function useApi(): {
-  status: State;
+  status: Status;
   api: ApiPromise | undefined;
   error: unknown;
 } {
-  const [status, setStatus] = useState<State>("idle");
+  const [status, setStatus] = useState<Status>("idle");
   const [api, setApi] = useState<ApiPromise | undefined>(undefined);
   const [error, setError] = useState<unknown>(undefined);
 
@@ -50,6 +50,8 @@ export function useApi(): {
 }
 
 async function connect(): Promise<ApiPromise> {
+  console.log(`Connecting to Litentry via ${litentryProductionSpec.name}`);
+
   // Create websocket provider using Litentry network RPCs
   const wsProvider = new WsProvider(
     litentryProductionSpec.rpcs.map((rpc) => rpc.url),
