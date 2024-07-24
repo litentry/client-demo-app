@@ -13,16 +13,14 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@litentry/chain-types": "1.1.0",
-    "@litentry/enclave": "1.0.4",
-    "@litentry/vc-sdk": "1.1.0",
-    "@litentry/credential-definitions": "^0.0.1",
+    "@litentry/chaindata": "*",
+    "@litentry/enclave": "*",
+    "@litentry/parachain-api": "*",
+    "@litentry/sidechain-api": "*",
+    "@litentry/vc-sdk": "*",
     "@polkadot/api": "^11.0.3",
     "@polkadot/api-base": "^11.0.3",
     "@polkadot/extension-dapp": "^0.47.4",
-    "@polkadot/rpc-provider": "^11.0.3",
-    "@polkadot/types": "^11.0.3",
-    "@polkadot/types-codec": "^11.1.1",
     "@polkadot/util": "^12.6.2",
     "@polkadot/util-crypto": "^12.6.2",
     "@talismn/connect-wallets": "^1.2.5",
@@ -40,5 +38,14 @@
     "react-query": "^3.39.3",
     "typescript": "5.4.5",
     "zod": "^3.23.8"
+  },
+  "pnpm": {
+    "overrides": {
+      "@litentry/chaindata": "0.1.1",
+      "@litentry/enclave": "^4.0.1",
+      "@litentry/parachain-api": "0.9.18-11",
+      "@litentry/sidechain-api": "0.9.18-11",
+      "@litentry/vc-sdk": "^3.0.0"
+    }
   }
 }
