@@ -16,12 +16,11 @@ import {
 } from "@chakra-ui/react";
 import {
   getWalletBySource,
-  Wallet,
   type WalletAccount,
 } from "@talismn/connect-wallets";
-import { decodeAddress } from "@polkadot/util-crypto";
-import { Assertion, vc } from "@litentry/parachain-api";
 import { u8aToString } from "@polkadot/util";
+
+import type { Assertion } from "@litentry/parachain-api";
 import type { Signer } from "@polkadot/types/types";
 
 import { createLitentryIdentityType, request } from "@litentry/enclave";
@@ -57,13 +56,13 @@ export default function Home() {
       type: "Substrate",
     });
     const assertions: Assertion[] = [
-      // LIT-Holder credential
+      // Basic Identity Verification
       api.createType("Assertion", {
-        A4: "10.00",
+        A1: "A1",
       }),
       // DOT-Holder credential
       api.createType("Assertion", {
-        A7: "10.00",
+        A7: "10.0",
       }),
     ];
 

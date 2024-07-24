@@ -5,7 +5,6 @@ overrides:
   '@litentry/enclave': ^4.0.1
   '@litentry/parachain-api': 0.9.18-11
   '@litentry/sidechain-api': 0.9.18-11
-  '@litentry/vc-sdk': ^3.0.0
 
 specifiers:
   '@binance/w3w-utils': ^1.1.4
@@ -16,13 +15,11 @@ specifiers:
   '@litentry/enclave': ^4.0.1
   '@litentry/parachain-api': 0.9.18-11
   '@litentry/sidechain-api': 0.9.18-11
-  '@litentry/vc-sdk': ^3.0.0
   '@polkadot/api': ^10.9.1
   '@polkadot/extension-dapp': ^0.47.4
   '@polkadot/types': ^10.9.1
   '@polkadot/types-codec': ^10.9.1
   '@polkadot/util': ^12.6.2
-  '@polkadot/util-crypto': ^12.6.2
   '@talismn/connect-wallets': ^1.2.5
   '@types/node': 20.12.12
   '@types/react': 18.3.2
@@ -42,16 +39,14 @@ dependencies:
   '@emotion/react': 11.11.4_2eeaxkqdcvbrwk75oeh4jz4him
   '@emotion/styled': 11.11.5_3dxvshcwin4ikn3q5ohg4s5dmu
   '@litentry/chaindata': 0.1.1
-  '@litentry/enclave': 4.0.1_3dln5gl7xi32jgiu7jfo2432em
+  '@litentry/enclave': 4.0.1_efe753bduxlmjhjrmjt26kijj4
   '@litentry/parachain-api': 0.9.18-11
   '@litentry/sidechain-api': 0.9.18-11
-  '@litentry/vc-sdk': 3.0.0_xf73hnr2jq6tsxsulypg6tlzuq
   '@polkadot/api': 10.13.1
-  '@polkadot/extension-dapp': 0.47.4_km4pncka52u6dhs2vwmajocsl4
+  '@polkadot/extension-dapp': 0.47.4_gz2o7a4xddwgs4ewtofvqediee
   '@polkadot/types': 10.13.1
   '@polkadot/types-codec': 10.13.1
   '@polkadot/util': 12.6.2
-  '@polkadot/util-crypto': 12.6.2_@polkadot+util@12.6.2
   '@talismn/connect-wallets': 1.2.5_@polkadot+api@10.13.1
   '@types/node': 20.12.12
   '@types/react': 18.3.2
@@ -1413,7 +1408,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@litentry/enclave/4.0.1_3dln5gl7xi32jgiu7jfo2432em:
+  /@litentry/enclave/4.0.1_efe753bduxlmjhjrmjt26kijj4:
     resolution: {integrity: sha512-/xTMMI59yQqH/S/sHXv1Mli1VUeMs9SZiP2UPmcBRPtlAeFytKuKSYSJOfCldS+/ppoDLxc5B/QiTYrTRwUvPQ==}
     peerDependencies:
       '@litentry/chaindata': '*'
@@ -1433,7 +1428,6 @@ packages:
       '@polkadot/types': 10.13.1
       '@polkadot/types-codec': 10.13.1
       '@polkadot/util': 12.6.2
-      '@polkadot/util-crypto': 12.6.2_@polkadot+util@12.6.2
     dev: false
 
   /@litentry/parachain-api/0.9.18-11:
@@ -1443,7 +1437,7 @@ packages:
       '@polkadot/api-augment': 10.13.1
       '@polkadot/api-base': 10.13.1
       '@polkadot/api-derive': 10.13.1
-      '@polkadot/keyring': 12.6.2_jzs25v2gbpse74p3c5i4cryr2q
+      '@polkadot/keyring': 12.6.2_@polkadot+util@12.6.2
       '@polkadot/rpc-core': 10.13.1
       '@polkadot/types': 10.13.1
       '@polkadot/types-augment': 10.13.1
@@ -1466,7 +1460,7 @@ packages:
       '@polkadot/api-augment': 10.13.1
       '@polkadot/api-base': 10.13.1
       '@polkadot/api-derive': 10.13.1
-      '@polkadot/keyring': 12.6.2_jzs25v2gbpse74p3c5i4cryr2q
+      '@polkadot/keyring': 12.6.2_@polkadot+util@12.6.2
       '@polkadot/rpc-core': 10.13.1
       '@polkadot/types': 10.13.1
       '@polkadot/types-augment': 10.13.1
@@ -1480,23 +1474,6 @@ packages:
       - bufferutil
       - supports-color
       - utf-8-validate
-    dev: false
-
-  /@litentry/vc-sdk/3.0.0_xf73hnr2jq6tsxsulypg6tlzuq:
-    resolution: {integrity: sha512-OGaqqzqZ3U3PPTPt0A45/vXw4HqKRH3gvSNXC9BVn0SHh1kReKZOst/3hBJZG6mYpi7XyOd77KX2PT+yJ3wZ7w==}
-    peerDependencies:
-      '@litentry/parachain-api': 0.9.18-11
-      '@litentry/sidechain-api': 0.9.18-11
-      '@polkadot/api': ^10.9.1
-      '@polkadot/util': ^12.5.1
-      '@polkadot/util-crypto': ^12.5.1
-      tslib: ^2.3.0
-    dependencies:
-      '@litentry/parachain-api': 0.9.18-11
-      '@litentry/sidechain-api': 0.9.18-11
-      '@polkadot/api': 10.13.1
-      '@polkadot/util': 12.6.2
-      '@polkadot/util-crypto': 12.6.2_@polkadot+util@12.6.2
     dev: false
 
   /@next/env/14.2.3:
@@ -1798,7 +1775,7 @@ packages:
       '@polkadot/api-augment': 10.13.1
       '@polkadot/api-base': 10.13.1
       '@polkadot/api-derive': 10.13.1
-      '@polkadot/keyring': 12.6.2_jzs25v2gbpse74p3c5i4cryr2q
+      '@polkadot/keyring': 12.6.2_@polkadot+util@12.6.2
       '@polkadot/rpc-augment': 10.13.1
       '@polkadot/rpc-core': 10.13.1
       '@polkadot/rpc-provider': 10.13.1
@@ -1818,13 +1795,12 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@polkadot/extension-dapp/0.47.4_km4pncka52u6dhs2vwmajocsl4:
+  /@polkadot/extension-dapp/0.47.4_gz2o7a4xddwgs4ewtofvqediee:
     resolution: {integrity: sha512-AxogM9KJ8bekV6yDXyX2x2AbfinLMlkVK0/RmWi8QtobAziH8paFy6wy6oqPilhZSQdN/Y+Z8Jm/wPuGlqz8cg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@polkadot/api': '*'
       '@polkadot/util': '*'
-      '@polkadot/util-crypto': '*'
     dependencies:
       '@polkadot/api': 10.13.1
       '@polkadot/extension-inject': 0.47.4_gz2o7a4xddwgs4ewtofvqediee
@@ -1887,12 +1863,11 @@ packages:
       '@polkadot/util-crypto': 10.4.2_@polkadot+util@10.4.2
     dev: false
 
-  /@polkadot/keyring/12.6.2_jzs25v2gbpse74p3c5i4cryr2q:
+  /@polkadot/keyring/12.6.2_@polkadot+util@12.6.2:
     resolution: {integrity: sha512-O3Q7GVmRYm8q7HuB3S0+Yf/q/EB2egKRRU3fv9b3B7V+A52tKzA+vIwEmNVaD1g5FKW9oB97rmpggs0zaKFqHw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@polkadot/util': 12.6.2
-      '@polkadot/util-crypto': 12.6.2
     dependencies:
       '@polkadot/util': 12.6.2
       '@polkadot/util-crypto': 12.6.2_@polkadot+util@12.6.2
@@ -1952,7 +1927,7 @@ packages:
     resolution: {integrity: sha512-oJ7tatVXYJ0L7NpNiGd69D558HG5y5ZDmH2Bp9Dd4kFTQIiV8A39SlWwWUPCjSsen9lqSvvprNLnG/VHTpenbw==}
     engines: {node: '>=18'}
     dependencies:
-      '@polkadot/keyring': 12.6.2_jzs25v2gbpse74p3c5i4cryr2q
+      '@polkadot/keyring': 12.6.2_@polkadot+util@12.6.2
       '@polkadot/types': 10.13.1
       '@polkadot/types-support': 10.13.1
       '@polkadot/util': 12.6.2
@@ -1976,7 +1951,7 @@ packages:
     resolution: {integrity: sha512-xgfHOF4y9jAD9aDDX/i9WUCRw8N6duRs0P/ysw2AafGKUGSBA/pqP/WXN61dQqq+DzZYfzL/FsMyTcUirsEkJA==}
     engines: {node: '>=18'}
     dependencies:
-      '@polkadot/keyring': 12.6.2_jzs25v2gbpse74p3c5i4cryr2q
+      '@polkadot/keyring': 12.6.2_@polkadot+util@12.6.2
       '@polkadot/types': 11.0.3
       '@polkadot/types-support': 11.0.3
       '@polkadot/util': 12.6.2
@@ -2144,7 +2119,7 @@ packages:
     resolution: {integrity: sha512-Hfvg1ZgJlYyzGSAVrDIpp3vullgxrjOlh/CSThd/PI4TTN1qHoPSFm2hs77k3mKkOzg+LrWsLE0P/LP2XddYcw==}
     engines: {node: '>=18'}
     dependencies:
-      '@polkadot/keyring': 12.6.2_jzs25v2gbpse74p3c5i4cryr2q
+      '@polkadot/keyring': 12.6.2_@polkadot+util@12.6.2
       '@polkadot/types-augment': 10.13.1
       '@polkadot/types-codec': 10.13.1
       '@polkadot/types-create': 10.13.1
@@ -2158,7 +2133,7 @@ packages:
     resolution: {integrity: sha512-7AGUaObaGKZntOzHX4IRKj+K1AjZpYBgrivnY73tqGCp7biByn8Ht6a74xFngGfay1yRrx7eS3NOeIpp4nKhrw==}
     engines: {node: '>=18'}
     dependencies:
-      '@polkadot/keyring': 12.6.2_jzs25v2gbpse74p3c5i4cryr2q
+      '@polkadot/keyring': 12.6.2_@polkadot+util@12.6.2
       '@polkadot/types-augment': 11.0.3
       '@polkadot/types-codec': 11.0.3
       '@polkadot/types-create': 11.0.3

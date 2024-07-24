@@ -17,13 +17,11 @@
     "@litentry/enclave": "*",
     "@litentry/parachain-api": "*",
     "@litentry/sidechain-api": "*",
-    "@litentry/vc-sdk": "*",
     "@polkadot/api": "^10.9.1",
     "@polkadot/types": "^10.9.1",
     "@polkadot/types-codec": "^10.9.1",
     "@polkadot/extension-dapp": "^0.47.4",
     "@polkadot/util": "^12.6.2",
-    "@polkadot/util-crypto": "^12.6.2",
     "@talismn/connect-wallets": "^1.2.5",
     "@types/node": "20.12.12",
     "@types/react": "18.3.2",
@@ -41,8 +39,7 @@
       "@litentry/chaindata": "0.1.1",
       "@litentry/enclave": "^4.0.1",
       "@litentry/parachain-api": "0.9.18-11",
-      "@litentry/sidechain-api": "0.9.18-11",
-      "@litentry/vc-sdk": "^3.0.0"
+      "@litentry/sidechain-api": "0.9.18-11"
     }
   },
   "devDependencies": {

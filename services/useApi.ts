@@ -50,7 +50,9 @@ export function useApi(): {
 }
 
 async function connect(): Promise<ApiPromise> {
-  console.log(`Connecting to Litentry via ${litentryProductionSpec.name}`);
+  console.log(
+    `Connecting to Litentry via ${litentryProductionSpec.rpcs[0].url}`,
+  );
 
   // Create websocket provider using Litentry network RPCs
   const wsProvider = new WsProvider(
