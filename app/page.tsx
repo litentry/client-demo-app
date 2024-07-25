@@ -55,6 +55,8 @@ export default function Home() {
       addressOrHandle: account.address,
       type: "Substrate",
     });
+    // See https://docs.litentry.com/parachain/sdk-documentation/requesting-a-verifiable-credential
+    // for more information about assertions and verifiable credentials
     const assertions: Assertion[] = [
       // Basic Identity Verification
       api.createType("Assertion", {
