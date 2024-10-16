@@ -14,7 +14,7 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@litentry/chaindata": "*",
-    "@litentry/enclave": "*",
+    "@litentry/client-sdk": "*",
     "@litentry/parachain-api": "*",
     "@litentry/sidechain-api": "*",
     "@polkadot/api": "^10.9.1",
@@ -37,7 +37,7 @@
   "pnpm": {
     "overrides": {
       "@litentry/chaindata": "0.1.1",
-      "@litentry/enclave": "^4.0.1",
+      "@litentry/client-sdk": "^1.0.0",
       "@litentry/parachain-api": "0.9.18-11",
       "@litentry/sidechain-api": "0.9.18-11"
     }
