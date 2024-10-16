@@ -23,7 +23,7 @@ import { u8aToString } from "@polkadot/util";
 import type { Assertion } from "@litentry/parachain-api";
 import type { Signer } from "@polkadot/types/types";
 
-import { createLitentryIdentityType, request } from "@litentry/enclave";
+import { createLitentryIdentityType, request } from "@litentry/client-sdk";
 
 import { useApi } from "@/services/useApi";
 import type { Status } from "@/services/types";
